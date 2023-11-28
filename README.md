@@ -19,10 +19,6 @@ L'objectif de ce projet est de mettre en pratique les concepts avancés de l'app
 
 ## Installation
 
-Pour installer les dépendances nécessaires, suivez les instructions appropriées en fonction de votre langage préféré.
+Pour installer les dépendances nécessaires, suivez les instructions appropriées en fonction des deux langages présentés: R et Python.
 
-### Environnement R
-
-```R
-source("install.R")
 
