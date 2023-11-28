@@ -23,6 +23,9 @@ Pour installer les dépendances nécessaires, suivez les instructions approprié
 
 # En R
 # En Python
+
+## Références
+Outre l'article, les pages académiques des auteurs ont évidemment servi de point de départ.
 ## Licence
 Ce projet est sous licence MIT
 
