@@ -10,7 +10,7 @@ L'implémentation de la PCA sparse est basée sur l'article suivant :
 
 **Titre :** Sparse Principal Component Analysis  
 **Auteurs :** Hui Zou, Trevor Hastie, \& Robert Tibshirani  
-**Source :** *Journal of Computational and Graphical Statistics*, 15:2, 265-286  
+**Source :** *Journal of Computational and Graphical Statistics*, 15:2, 265-286, 2006  
 **DOI :** [10.1198/106186006X113430](https://doi.org/10.1198/106186006X113430)
 
 ## Objectif du Projet
