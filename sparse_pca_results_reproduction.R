@@ -154,21 +154,18 @@ par(mfrow = c(3, 2), mar = c(4, 4, 2, 1))  # 3x2 layout for subplots
 # Loop through principal components
 for (j in 1:6) {
   # on stocke dans une matrice les variances ajustées
-  PEVmatrix <- matrix(0, ncol = 6, nrow = length(lambda.grid))
+  PEV <- matrix(0, ncol = 6, nrow = length(lambda.grid))
   
   # on fait une boucle
   for (i in seq_along(lambda.grid)) {
     cat(i, "\n")
-    SPCA <- spca(pitprops, K = 1, type = "Gram", sparse = "penalty", lambda = 0,
+    out <- spca(pitprops, K = 1, type = "Gram", sparse = "penalty", lambda = 0,
                  para = rep(lambda.grid[i], 6), eps.conv = 1e-4)
-    PEVmatrix[i, ] <- SPCA$pev[]
+    PEV[i, ] <- out$pev[]
   }
   
-  # Plot with points
-  
-  points(SP$lambda1opt[j], max(SP$pev[, j]), col = "red", pch = 16)
-  abline(v = SP$lambda1opt[j], col = "red", lty = 2)
-}
+  # Plot
+  plot(plot(lambda.grid, PEVmatrix[,1], type = "l", xlim = c(0, 0.3)) #Pas le même plot: ça décroit trop rapidement;
 
 ######
 ##Exemple synthétique (Table 5)
