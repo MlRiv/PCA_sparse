@@ -30,8 +30,7 @@ Outre l'article, les pages académiques des auteurs ont évidemment servi de poi
 Pour le dataset pitprops: 
 
 **Titre :** Two Case Studies in the Application of Principal Component Analysis
-
-**Auteurs :** J. N. R. Jeffers  
+**Auteur :** J. N. R. Jeffers  
 **Source :** *Journal of the Royal Statistical Society*. Series C (Applied Statistics) , 1967, Vol.
 16, No. 3 (1967), pp. 225-236  
 
