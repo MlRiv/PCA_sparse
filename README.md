@@ -22,10 +22,16 @@ L'objectif de ce projet est de mettre en pratique les concepts avancés de l'app
 Pour installer les dépendances nécessaires, suivez les instructions appropriées en fonction des deux langages présentés: R et Python.
 
 # En R
+On utilise la version 1.3 du module elasticnet et le dataset "pitprops", utilisé par Zou.
 # En Python
 
 ## Références
-Outre l'article, les pages académiques des auteurs ont évidemment servi de point de départ.
+Outre l'article, les pages académiques des auteurs ont évidemment servi de point de départ. 
+Pour le dataset pitprops: Two Case Studies in the Application of Principal Component Analysis
+Author(s): J. N. R. Jeffers
+Source: Journal of the Royal Statistical Society. Series C (Applied Statistics) , 1967, Vol.
+16, No. 3 (1967), pp. 225-236
+
 ## Licence
 Ce projet est sous licence MIT
 
