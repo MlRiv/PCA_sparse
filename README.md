@@ -27,9 +27,10 @@ On utilise la version 1.3 du module elasticnet et le dataset "pitprops", utilis�
 
 ## Références
 Outre l'article, les pages académiques des auteurs ont évidemment servi de point de départ. 
-Pour le dataset pitprops: Two Case Studies in the Application of Principal Component Analysis
-Author(s): J. N. R. Jeffers
-Source: Journal of the Royal Statistical Society. Series C (Applied Statistics) , 1967, Vol.
+Pour le dataset pitprops: 
+**Titre :** Two Case Studies in the Application of Principal Component Analysis
+**Auteur :** J. N. R. Jeffers
+**Source :** Journal of the Royal Statistical Society. Series C (Applied Statistics) , 1967, Vol.
 16, No. 3 (1967), pp. 225-236
 
 ## Licence
