@@ -18,12 +18,8 @@ L'implémentation de la PCA sparse est basée sur l'article suivant :
 L'objectif de ce projet est de mettre en pratique les concepts avancés de l'apprentissage non supervisé en implémentant une méthode spécifique, la PCA sparse, qui offre une alternative intéressante à la PCA classique en introduisant la notion de parcimonie dans les vecteurs de chargement.
 
 ## Installation
+On utilise la version 1.3 du module elasticnet et le dataset "pitprops" inclus dans le package, utilisé par Zou.
 
-Pour installer les dépendances nécessaires, suivez les instructions appropriées en fonction des deux langages présentés: R et Python.
-
-# En R
-On utilise la version 1.3 du module elasticnet et le dataset "pitprops", utilisé par Zou.
-# En Python
 
 ## Références
 Outre l'article, les pages académiques des auteurs ont évidemment servi de point de départ. 
