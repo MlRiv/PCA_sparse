@@ -97,7 +97,7 @@ legend("topleft", legend = expression(y == (abs(x) - delta) + Sign(x)),
 
 
 ########
-#Reproduction des tableaux 1  et 3 à l'aide d'elasticnet
+#Reproduction des tableaux 1 et 3 à l'aide d'elasticnet
 ########
 
 out<-spca(Data,K=6,type="Gram",sparse="penalty",trace=TRUE,para=c(0,0,0,0,0,0)) #pour la table 1, on a une simple SVD
@@ -149,25 +149,22 @@ print(cumulative_variance3)
 # Set up lambda grid
 lambda.grid <- seq(0, 3.5, 0.01)
 
-# Create subplots
 par(mfrow = c(3, 2), mar = c(4, 4, 2, 1))  # 3x2 layout for subplots
 
 # Loop through principal components
 for (j in 1:6) {
-  # Initialize PEV matrix
+  # on stocke dans une matrice les variances ajustées
   PEVmatrix <- matrix(0, ncol = 6, nrow = length(lambda.grid))
   
-  # Loop through lambda grid
+  # on fait une boucle
   for (i in seq_along(lambda.grid)) {
     cat(i, "\n")
-    SPCA <- spca(pitprops, K = 6, type = "Gram", sparse = "penalty", lambda = 0,
+    SPCA <- spca(pitprops, K = 1, type = "Gram", sparse = "penalty", lambda = 0,
                  para = rep(lambda.grid[i], 6), eps.conv = 1e-4)
     PEVmatrix[i, ] <- SPCA$pev[]
   }
   
   # Plot with points
-  plot(lambda.grid, PEVmatrix[, j], type = "l", xlim = c(0, 0.2),
-       xlab = expression(lambda[1]), ylab = "PEV", main = paste("PC", j))
   
   points(SP$lambda1opt[j], max(SP$pev[, j]), col = "red", pch = 16)
   abline(v = SP$lambda1opt[j], col = "red", lty = 2)
@@ -200,11 +197,18 @@ X <- data.frame(
   X10 = V3 + rnorm(n, mean = 0, sd = 1)
 )
 
-# Display the synthetic data
-print(X)
 
+#En prenant une PCA classique, les valeurs ne sont pas tout à fait les mêmes
+PCA <- prcomp(X, scale. = TRUE)
+PCA$rotation[, 1:3] #comme dans l'article
+PCA$sdev[1:3]
+PCA$sdev[1:3]/sum(PCA$sdev[1:3])
 
+out5 <- spca(var(X), K = 10, para = rep(5, 10), sparse = "penalty",
+            max.iter = 100, lambda = 0,
+            use.corr = TRUE)
 
+out5$pev
 #### Faire une jolie table
 
 
