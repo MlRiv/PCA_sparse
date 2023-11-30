@@ -145,14 +145,13 @@ out3$pev #Explained variance
 # la variance cumulée
 cumulative_variance3 <- cumsum(out3$pev) 
 print(cumulative_variance3)
-### figure 2: Pev=f(lamda)
-# Set up lambda grid
+### figure 2: Pev=f(lamda) (l'algo ne tourne pas)
+# Set up l'axe des lamdba
 lambda.grid <- seq(0, 3.5, 0.01)
 
-par(mfrow = c(3, 2), mar = c(4, 4, 2, 1))  # 3x2 layout for subplots
+par(mfrow = c(3, 2), mar = c(4, 4, 2, 1))  # 3x2 layout 
 
-# Loop through principal components
-for (j in 1:6) {
+# through principal components
   # on stocke dans une matrice les variances ajustées
   PEV <- matrix(0, ncol = 6, nrow = length(lambda.grid))
   
@@ -219,16 +218,8 @@ if (!requireNamespace("grid", quietly = TRUE)) {
 }
 library(grid)
 
-# Assuming 'out' is the PCA result
-# Replace 'out' with your actual PCA result object
 
-# Load necessary libraries
-if (!requireNamespace("gridExtra", quietly = TRUE)) {
-  install.packages("gridExtra")
-}
-library(gridExtra)
-
-# Create a data frame with loadings, variance, and cumulative variance
+# data frame avec loadings, variance, et cumulative variance
 table_df <- data.frame(
   X = c("topdiam", "length", "moist", "testsg", "ovensg", "ringtop", "ringbut", "bowmax", "bowdist", "whorls", "clear", "knots", "diaknot", "Variance (%)", "Cumulative variance (%)"),
   PC1 = round(c(out$loadings[, 1], out$pev[1], cumsum(out$pev)[1]), 2),
@@ -239,10 +230,10 @@ table_df <- data.frame(
   PC6 = round(c(out$loadings[, 6], out$pev[6], cumsum(out$pev)[6]), 2)
 )
 
-# Create a tableGrob 
+# tableGrob 
 table_grob <- tableGrob(table_df)
 
-# Display the table image
+# l'image
 grid.newpage()
 grid.draw(table_grob)
 
@@ -253,5 +244,6 @@ grid.draw(table_grob)
 ##########
 #PMA et sparse PCA
 ##########
-#Le code est du package sparsepca est très clair et disponible à l'adresse https://github.com/erichson/spca/blob/master/R/spca.R
+#Le code est du package sparsepca est très clair et disponible à l'adresse https://github.com/erichson/spca/blob/master/R/spca.R. 
+#L'exemple type de PMA (??PMA) est aussi très instructif
 
