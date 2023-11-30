@@ -166,6 +166,12 @@ par(mfrow = c(3, 2), mar = c(4, 4, 2, 1))  # 3x2 layout
   # Plot
   plot(plot(lambda.grid, PEVmatrix[,1], type = "l", xlim = c(0, 0.3)) #Pas le même plot: ça décroit trop rapidement;
 
+#########
+#Avec un threshold pour sparse PCA
+###########
+para=c(0.06,0.16,0.1,0.5,0.5,0.5)
+out4<-arrayspc(Data,K=6,para,use.corr=FALSE, max.iter=200,trace=FALSE,eps=1e-3) 
+out4$loadings #on a les résultats
 ######
 ##Exemple synthétique (Table 5)
 ######
@@ -196,14 +202,14 @@ X <- data.frame(
 
 #En prenant une PCA classique, les valeurs ne sont pas tout à fait les mêmes
 PCA <- prcomp(X, scale. = TRUE)
-PCA$rotation[, 1:3] #comme dans l'article
+PCA$rotation[, 1:3] #ça ne marche pas comme dans l'article
 PCA$sdev[1:3]
 PCA$sdev[1:3]/sum(PCA$sdev[1:3])
 
 out5 <- spca(var(X), K = 10, para = rep(5, 10), sparse = "penalty",
             max.iter = 100, lambda = 0,
             use.corr = TRUE)
-
+out5$loadings
 out5$pev
 #### Faire une jolie table
 
