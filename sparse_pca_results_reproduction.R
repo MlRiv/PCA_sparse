@@ -202,7 +202,7 @@ X <- data.frame(
 
 #En prenant une PCA classique, les valeurs ne sont pas tout à fait les mêmes
 PCA <- prcomp(X, scale. = TRUE)
-PCA$rotation[, 1:3] #ça ne marche pas comme dans l'article
+PCA$rotation[, 1:3] #c'est lidée de la rotation de JoLLIFFE: ça ne marche pas comme dans l'article
 PCA$sdev[1:3]
 PCA$sdev[1:3]/sum(PCA$sdev[1:3])
 
